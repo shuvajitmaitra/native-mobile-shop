@@ -3,8 +3,8 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
-import { NavigationContainer } from "@react-navigation/native";
-import { MaterialIcons } from "@expo/vector-icons";
+import { SimpleLineIcons  } from "@expo/vector-icons";
+import Shop from "../Pages/Shop";
 
 const Tab = createBottomTabNavigator();
 const BottomNavigator = ({ navigation }) => {
@@ -13,15 +13,18 @@ const BottomNavigator = ({ navigation }) => {
       screenOptions={{
         headerTitleAlign: "center",
         headerRight: () => (
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <MaterialIcons name="menu" size={24} color="red" style={{padding: 10}}/>
-            {/* <Text style={{fontSize: 30}}>Menu</Text> */}
-          </TouchableOpacity>
+          <SimpleLineIcons 
+            onPress={() => navigation.openDrawer()}
+            name="menu"
+            size={30}
+            style={{color: "red",paddingHorizontal: 10}}
+          />
         ),
       }}
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Shop" component={Shop} />
     </Tab.Navigator>
   );
 };
