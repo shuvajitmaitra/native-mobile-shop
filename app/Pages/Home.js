@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Button } from "react-native";
+import React from "react";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View>
-      <Text>Home</Text>
+      <Text>This is home page</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
