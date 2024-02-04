@@ -4,8 +4,8 @@ import { AntDesign } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../Redux/Action/Actions";
 
-const ShopCard = ({ item }) => {
-  const { model, brand, price, quantity, image } = item;
+const ShopCard = ({ items }) => {
+  const { model, brand, price, quantity, image } = items;
 
   const dispatch = useDispatch();
   const AddItem = (item) => {
@@ -39,7 +39,7 @@ const ShopCard = ({ item }) => {
         Model: {model}
       </Text>
       <Text style={{ fontSize: 12, color: "gray", marginTop: 3 }}>
-        Quantity: {quantity}{" "}
+        Quantity: {quantity}
       </Text>
       {/* <View style={{ flexGrow: 1 }}></View> */}
       <View
@@ -54,7 +54,7 @@ const ShopCard = ({ item }) => {
         <TouchableOpacity
           style={{ alignItems: "center", marginTop: 3 }}
           onPress={() => {
-            AddItem(item);
+            AddItem(items);
           }}
         >
           <AntDesign

@@ -89,7 +89,7 @@ const Shop = () => {
     <ScrollView>
      <View style={{alignItems: "center", justifyContent: "center",flexWrap: "wrap", flexDirection: "row"}}>
      {
-        data.map(item => <ShopCard key={item.index} item={item}></ShopCard>)
+        data.map(items => <ShopCard key={items.index} items={items}></ShopCard>)
       }
      </View>
     </ScrollView>
