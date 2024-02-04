@@ -17,7 +17,7 @@ const BottomNavigator = ({ navigation }) => {
             onPress={() => navigation.openDrawer()}
             name="menu"
             size={30}
-            style={{color: "red",paddingHorizontal: 10}}
+            style={{color: "black",paddingHorizontal: 10}}
           />
         ),
       }}

@@ -77,8 +77,7 @@ const Shop = () => {
   ]
   return (
     <ScrollView>
-      <Text>ShopPage</Text>
-     <View style={{display: "grid"}}>
+     <View style={{alignItems: "center", justifyContent: "center",flexWrap: "wrap", flexDirection: "row"}}>
      {
         data.map(item => <ShopCard key={item.model} item={item}></ShopCard>)
       }
