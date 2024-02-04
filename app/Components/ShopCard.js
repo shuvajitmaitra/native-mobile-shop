@@ -1,16 +1,18 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
-import { useDispatch } from "react-redux";
-import { addItemToCart } from "../Redux/Action/Actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../Redux/CartSlice";
+
 
 const ShopCard = ({ items }) => {
-  const { model, brand, price, quantity, image } = items;
-
-  const dispatch = useDispatch();
-  const AddItem = (item) => {
-    dispatch(addItemToCart(item));
-  };
+  const { model, price, quantity, image } = items;
+  const dispatch = useDispatch()
+  const addedData = useSelector(state => state)
+  console.log(addedData);
+  const mobileDataAdd = (item) =>{
+    dispatch(addToCart(item))
+  }
   return (
     <View
       style={{
@@ -54,7 +56,7 @@ const ShopCard = ({ items }) => {
         <TouchableOpacity
           style={{ alignItems: "center", marginTop: 3 }}
           onPress={() => {
-            AddItem(items);
+            mobileDataAdd(items)
           }}
         >
           <AntDesign

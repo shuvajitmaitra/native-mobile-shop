@@ -1,20 +1,20 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-import { removeItemFromCart } from "../../Redux/Action/Actions";
+import { useDispatch, useSelector } from "react-redux";
+import { removeToCart } from "../Redux/CartSlice";
 
 const Cart = () => {
-  const item = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const removeItem = (index) => {
-    dispatch(removeItemFromCart(index));
-  };
+const removed = useSelector(state => state.actions)
+const dispatch = useDispatch()
+const removeData = (index) => {
+  dispatch(removeToCart(index))
+}
   return (
     <ScrollView>
-      {item.map((singleItem) => (
+      {item?.map((singleItem) => (
         <View
-          key={item.model}
+          key={singleItem.index}
           style={{
             flexDirection: "row",
             margin: 5,
@@ -47,9 +47,7 @@ const Cart = () => {
           <View style={{ flexGrow: 1 }}></View>
           <TouchableOpacity
             onPress={() => {
-              console.log(singleItem.index)
-              removeItem(singleItem.index);
-             
+             removeData(singleItem.index)
             }}
           >
             <MaterialIcons

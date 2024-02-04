@@ -1,7 +1,6 @@
 import { Provider } from "react-redux";
 import DrawerNavigator from "./app/DrawerNavigation/DrawerNavigator";
-import { myStore } from "./Redux/Store/store";
-
+import myStore from "./app/Redux/myStore";
 export default function App() {
   return (
     <>
