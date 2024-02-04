@@ -5,6 +5,7 @@ import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
 import { SimpleLineIcons  } from "@expo/vector-icons";
 import Shop from "../Pages/Shop";
+import Cart from "../Pages/Cart";
 
 const Tab = createBottomTabNavigator();
 const BottomNavigator = ({ navigation }) => {
@@ -25,6 +26,7 @@ const BottomNavigator = ({ navigation }) => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Shop" component={Shop} />
+      <Tab.Screen name="Cart" component={Cart} />
     </Tab.Navigator>
   );
 };

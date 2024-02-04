@@ -1,11 +1,13 @@
-import BottomNavigator from "./app/BottomNavigation/BottomNavigator";
+import { Provider } from "react-redux";
 import DrawerNavigator from "./app/DrawerNavigation/DrawerNavigator";
+import { myStore } from "./Redux/Store/store";
 
 export default function App() {
   return (
     <>
-      <DrawerNavigator />
-   
+      <Provider store={myStore}>
+        <DrawerNavigator />
+      </Provider>
     </>
   );
 }

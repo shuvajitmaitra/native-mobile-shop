@@ -5,6 +5,7 @@ import ShopCard from '../../Components/ShopCard'
 const Shop = () => {
   const data = [
     {
+      "index": 1,
       "model": "iPhone 13",
       "brand": "Apple",
       "price": 999.99,
@@ -12,6 +13,7 @@ const Shop = () => {
       "quantity": 50
     },
     {
+      "index": 2,
       "model": "Galaxy S21",
       "brand": "Samsung",
       "price": 799.99,
@@ -19,6 +21,7 @@ const Shop = () => {
       "quantity": 30
     },
     {
+      "index": 3,
       "model": "Pixel 6",
       "brand": "Google",
       "price": 699.99,
@@ -26,6 +29,7 @@ const Shop = () => {
       "quantity": 25
     },
     {
+      "index": 4,
       "model": "OnePlus 9",
       "brand": "OnePlus",
       "price": 899.99,
@@ -33,6 +37,7 @@ const Shop = () => {
       "quantity": 35
     },
     {
+      "index": 5,
       "model": "Xperia 5 III",
       "brand": "Sony",
       "price": 849.99,
@@ -40,6 +45,7 @@ const Shop = () => {
       "quantity": 20
     },
     {
+      "index": 6,
       "model": "Mi 11",
       "brand": "Xiaomi",
       "price": 699.99,
@@ -47,6 +53,7 @@ const Shop = () => {
       "quantity": 40
     },
     {
+      "index": 7,
       "model": "ZenFone 8",
       "brand": "ASUS",
       "price": 749.99,
@@ -54,6 +61,7 @@ const Shop = () => {
       "quantity": 15
     },
     {
+      "index": 8,
       "model": "Moto G Power",
       "brand": "Motorola",
       "price": 249.99,
@@ -61,6 +69,7 @@ const Shop = () => {
       "quantity": 50
     },
     {
+      "index": 9,
       "model": "Nokia 8.3",
       "brand": "Nokia",
       "price": 499.99,
@@ -68,6 +77,7 @@ const Shop = () => {
       "quantity": 20
     },
     {
+      "index": 10,
       "model": "LG Velvet",
       "brand": "LG",
       "price": 599.99,
@@ -79,7 +89,7 @@ const Shop = () => {
     <ScrollView>
      <View style={{alignItems: "center", justifyContent: "center",flexWrap: "wrap", flexDirection: "row"}}>
      {
-        data.map(item => <ShopCard key={item.model} item={item}></ShopCard>)
+        data.map(item => <ShopCard key={item.index} item={item}></ShopCard>)
       }
      </View>
     </ScrollView>
