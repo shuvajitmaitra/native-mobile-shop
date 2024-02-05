@@ -3,7 +3,7 @@ import { View, Text, Button } from "react-native";
 
 const Home = () => {
   return (
-    <View>
+    <View >
       <Text>This is home page</Text>
     </View>
   );

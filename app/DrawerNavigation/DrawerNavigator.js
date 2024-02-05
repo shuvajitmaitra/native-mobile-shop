@@ -19,12 +19,6 @@ const CustomDrawerContent = (props) => {
         }}
       />
       <DrawerItem
-        label={"Profile"}
-        onPress={() => {
-          props.navigation.navigate("Profile");
-        }}
-      />
-      <DrawerItem
         label={"Shop"}
         onPress={() => {
           props.navigation.navigate("Shop");
