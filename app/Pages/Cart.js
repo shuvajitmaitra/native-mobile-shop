@@ -1,5 +1,5 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import React from "react";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { MaterialIcons } from "@expo/vector-icons";
 import { removeItemFromCart } from "../../Redux/Action/Actions";
@@ -14,7 +14,7 @@ const Cart = () => {
     <ScrollView>
       {item.map((singleItem) => (
         <View
-          key={item.model}
+          key={item.index}
           style={{
             flexDirection: "row",
             margin: 5,

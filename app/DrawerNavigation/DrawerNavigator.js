@@ -1,3 +1,4 @@
+import React from "react";
 import {
   DrawerContentScrollView,
   DrawerItem,
@@ -6,7 +7,7 @@ import {
 } from "@react-navigation/drawer";
 import { SimpleLineIcons } from "@expo/vector-icons";
 const Drawer = createDrawerNavigator();
-import React from "react";
+
 import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
 import { NavigationContainer } from "@react-navigation/native";

@@ -1,5 +1,6 @@
-import { View, Text, Button, TouchableOpacity } from "react-native";
 import React from "react";
+import { View, Text, Button, TouchableOpacity } from "react-native";
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
