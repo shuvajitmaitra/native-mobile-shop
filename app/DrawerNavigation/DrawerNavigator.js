@@ -5,9 +5,6 @@ import {
   createDrawerNavigator,
 } from "@react-navigation/drawer";
 const Drawer = createDrawerNavigator();
-import React from "react";
-import Home from "../Pages/Home";
-import Profile from "../Pages/Profile";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomNavigator from "../BottomNavigation/BottomNavigator";
 

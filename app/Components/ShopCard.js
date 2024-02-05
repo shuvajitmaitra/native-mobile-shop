@@ -8,8 +8,8 @@ import { addToCart } from "../Redux/CartSlice";
 const ShopCard = ({ items }) => {
   const { model, price, quantity, image } = items;
   const dispatch = useDispatch()
-  const addedData = useSelector(state => state)
-  console.log(addedData);
+  // const addedData = useSelector(state => state)
+  // console.log(addedData);
   const mobileDataAdd = (item) =>{
     dispatch(addToCart(item))
   }

@@ -1,20 +1,20 @@
 import React from "react";
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeToCart } from "../Redux/CartSlice";
-
+import { MaterialIcons } from '@expo/vector-icons';
 const Cart = () => {
 const items = useSelector(state => state.mobilesData)
+console.log(items)
 const dispatch = useDispatch()
 const removeData = (index) => {
   dispatch(removeToCart(index))
 }
   return (
     <ScrollView>
-      {items?.map((item) => (
+      {items?.map((item, index) => (
         <View
-          key={item.index}
+          key={item.id}
           style={{
             flexDirection: "row",
             margin: 5,
@@ -47,7 +47,7 @@ const removeData = (index) => {
           <View style={{ flexGrow: 1 }}></View>
           <TouchableOpacity
             onPress={() => {
-             removeData(item.index)
+             removeData(item.id)
             }}
           >
             <MaterialIcons
