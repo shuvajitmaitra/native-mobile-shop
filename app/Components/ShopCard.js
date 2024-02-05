@@ -2,18 +2,17 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../Redux/CartSlice";
-
+import { addToCart, decrementQuantity } from "../Redux/CartSlice";
 
 const ShopCard = ({ items }) => {
-  const { model, price, quantity, image } = items;
-  const dispatch = useDispatch()
-  // const addedData = useSelector(state => state)
-  // console.log(addedData);
-  const mobileDataAdd = (item) =>{
-    dispatch(addToCart(item))
-    
-  }
+  const { model, price, brand, image } = items;
+  const dispatch = useDispatch();
+  const addedData = useSelector((state) => state.mobilesData);
+  console.log("addedData", addedData);
+  const mobileDataAdd = (item) => {
+    dispatch(addToCart(item));
+    dispatch(decrementQuantity(item));
+  };
   return (
     <View
       style={{
@@ -41,15 +40,14 @@ const ShopCard = ({ items }) => {
       <Text style={{ fontSize: 12, marginTop: 3, fontWeight: "bold" }}>
         Model: {model}
       </Text>
-      <Text style={{ fontSize: 12, color: "gray", marginTop: 3 }}>
-        Quantity: {quantity}
+      <Text style={{ fontSize: 12, color: "gray", marginTop: 4 }}>
+        Brand: {brand}
       </Text>
       {/* <View style={{ flexGrow: 1 }}></View> */}
       <View
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          marginTop: 3,
           alignItems: "center",
         }}
       >
@@ -57,7 +55,7 @@ const ShopCard = ({ items }) => {
         <TouchableOpacity
           style={{ alignItems: "center", marginTop: 3 }}
           onPress={() => {
-            mobileDataAdd(items)
+            mobileDataAdd(items);
           }}
         >
           <AntDesign
