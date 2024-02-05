@@ -5,9 +5,13 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      console.log("state", state);
-      console.log("action: ", action);
-      state.push(action.payload);
+        const itemInCart = state.find(item=> item.id == action.payload.id)
+        if(itemInCart){
+            itemInCart.order++
+        }
+        else{
+            state.push({...action.payload, order:1});
+        }
     },
     removeToCart: (state, action) => {
       return state.filter((item) => item.id !== action.payload);

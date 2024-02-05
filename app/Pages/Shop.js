@@ -9,7 +9,7 @@ const Shop = () => {
       brand: "Apple",
       price: 999.99,
       image: "https://i.postimg.cc/L4GPdRz7/i-Phone-13.jpg",
-      quantity: 50
+      quantity: 50,
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ const Shop = () => {
       brand: "Samsung",
       price: 799.99,
       image: "https://i.postimg.cc/tg9C0vS8/Galaxy-S21.jpg",
-      quantity: 30
+      quantity: 30,
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ const Shop = () => {
       brand: "Google",
       price: 699.99,
       image: "https://i.postimg.cc/0jSb5Mp4/Pixel-6.jpg",
-      quantity: 25
+      quantity: 25,
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ const Shop = () => {
       brand: "OnePlus",
       price: 899.99,
       image: "https://i.postimg.cc/wTJmgP2B/One-Plus-9.jpg",
-      quantity: 35
+      quantity: 35,
     },
     {
       id: 5,
@@ -41,7 +41,7 @@ const Shop = () => {
       brand: "Sony",
       price: 849.99,
       image: "https://i.postimg.cc/14xsvvVC/Xperia-5-III.jpg",
-      quantity: 20
+      quantity: 20,
     },
     {
       id: 6,
@@ -49,7 +49,7 @@ const Shop = () => {
       brand: "Xiaomi",
       price: 699.99,
       image: "https://i.postimg.cc/g2W6JDtH/Mi-11.jpg",
-      quantity: 40
+      quantity: 40,
     },
     {
       id: 7,
@@ -57,7 +57,7 @@ const Shop = () => {
       brand: "ASUS",
       price: 749.99,
       image: "https://i.postimg.cc/LXnJ70h2/Zen-Fone-8.jpg",
-      quantity: 15
+      quantity: 15,
     },
     {
       id: 8,
@@ -65,7 +65,7 @@ const Shop = () => {
       brand: "Motorola",
       price: 249.99,
       image: "https://i.postimg.cc/wBWtwdqw/Moto-G-Power.jpg",
-      quantity: 50
+      quantity: 50,
     },
     {
       id: 9,
@@ -73,7 +73,7 @@ const Shop = () => {
       brand: "Nokia",
       price: 499.99,
       image: "https://i.postimg.cc/MGZM0GSc/Nokia-8-3.jpg",
-      quantity: 20
+      quantity: 20,
     },
     {
       id: 10,
@@ -81,7 +81,7 @@ const Shop = () => {
       brand: "LG",
       price: 599.99,
       image: "https://i.postimg.cc/2j1WX3Bh/LG-Velvet.jpg",
-      quantity: 30
+      quantity: 30,
     }
   ]
   return (

@@ -12,6 +12,7 @@ const ShopCard = ({ items }) => {
   // console.log(addedData);
   const mobileDataAdd = (item) =>{
     dispatch(addToCart(item))
+    
   }
   return (
     <View

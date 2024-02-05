@@ -14,7 +14,7 @@ const removeData = (index) => {
     <ScrollView>
       {items?.map((item, index) => (
         <View
-          key={item.id}
+          key={index}
           style={{
             flexDirection: "row",
             margin: 5,
@@ -36,6 +36,9 @@ const removeData = (index) => {
             <Text style={{ fontWeight: 500 }}>Model: {item.model}</Text>
             <Text style={{ color: "gray", marginTop: 2 }}>
               Brand: {item.brand}
+            </Text>
+            <Text style={{ color: "gray", marginTop: 2 }}>
+              Order: {item.order}
             </Text>
             <Text style={{ color: "gray", marginTop: 2 }}>
               Price:{" "}
