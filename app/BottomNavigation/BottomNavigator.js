@@ -7,9 +7,12 @@ import Cart from "../Pages/Cart";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Text, View } from "react-native";
+import { useSelector } from "react-redux";
 
 const Tab = createBottomTabNavigator();
 const BottomNavigator = ({ navigation }) => {
+  const addedProduct = useSelector((state) => state.mobilesData);
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -70,7 +73,6 @@ const BottomNavigator = ({ navigation }) => {
             <View style={{ position: "relative" }}>
               <Text
                 style={{
-                  backgroundColor: "black",
                   color: "white",
                   textAlign: "center",
                   borderRadius: 100,
@@ -78,10 +80,10 @@ const BottomNavigator = ({ navigation }) => {
                   paddingHorizontal: 6,
                   top: -15,
                   right: -15,
-                  backgroundColor: focused ? "#e71d36" : "black",
+                  backgroundColor: addedProduct.length && (focused ? "#e71d36" : "black"),
                 }}
               >
-                0
+                {addedProduct.length && addedProduct.length}
               </Text>
               <AntDesign
                 name="shoppingcart"
