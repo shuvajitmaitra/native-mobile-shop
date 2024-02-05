@@ -1,8 +1,4 @@
-import { View, ScrollView } from 'react-native'
-import React from 'react'
-import ShopCard from "../Components/ShopCard"
-const Shop = () => {
-  const data = [
+export default data = [
     {
       id: 1,
       model: "iPhone 13",
@@ -84,15 +80,3 @@ const Shop = () => {
       quantity: 30
     }
   ]
-  return (
-    <ScrollView>
-     <View style={{alignItems: "center", justifyContent: "center",flexWrap: "wrap", flexDirection: "row"}}>
-     {
-        data.map((items , index)=> <ShopCard key={index} items={items}></ShopCard>)
-      }
-     </View>
-    </ScrollView>
-  )
-}
-
-export default Shop;

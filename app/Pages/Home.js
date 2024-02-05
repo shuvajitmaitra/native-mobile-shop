@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, Button } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { AntDesign } from '@expo/vector-icons';
+import Slider from "../Components/Slider";
+import NewSlider from "../Components/NewSlider";
 
 const Home = () => {
   return (
@@ -10,6 +12,8 @@ const Home = () => {
     <TextInput placeholder="Search mobile" className=''/>
     <AntDesign name="search1" size={24} color="#e71d36" className='font-3xl' />
    </View>
+   <Slider/>
+   <NewSlider/>
     </View>
   );
 };
