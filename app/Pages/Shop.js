@@ -1,7 +1,6 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, ScrollView } from 'react-native'
 import React from 'react'
-import ShopCard from '../../Components/ShopCard'
-
+import ShopCard from "../Components/ShopCard"
 const Shop = () => {
   const data = [
     {

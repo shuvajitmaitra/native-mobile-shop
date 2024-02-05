@@ -1,18 +1,18 @@
 import React from "react";
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { MaterialIcons } from "@expo/vector-icons";
-import { removeItemFromCart } from "../../Redux/Action/Actions";
+import { removeToCart } from "../Redux/CartSlice";
 
 const Cart = () => {
-  const item = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const removeItem = (index) => {
-    dispatch(removeItemFromCart(index));
-  };
+const items = useSelector(state => state.mobilesData)
+const dispatch = useDispatch()
+const removeData = (index) => {
+  dispatch(removeToCart(index))
+}
   return (
     <ScrollView>
-      {item.map((singleItem) => (
+      {items?.map((item) => (
         <View
           key={item.index}
           style={{
@@ -23,7 +23,7 @@ const Cart = () => {
           }}
         >
           <Image
-            source={{ uri: singleItem.image }}
+            source={{ uri: item.image }}
             width={80}
             height={80}
             style={{
@@ -33,13 +33,13 @@ const Cart = () => {
             }}
           />
           <View style={{ marginHorizontal: 10 }}>
-            <Text style={{ fontWeight: 500 }}>Model: {singleItem.model}</Text>
+            <Text style={{ fontWeight: 500 }}>Model: {item.model}</Text>
             <Text style={{ color: "gray", marginTop: 2 }}>
-              Brand: {singleItem.brand}
+              Brand: {item.brand}
             </Text>
             <Text style={{ color: "gray", marginTop: 2 }}>
               Price:{" "}
-              <Text style={{ color: "#e71d36" }}>$ {singleItem.price}</Text>
+              <Text style={{ color: "#e71d36" }}>$ {item.price}</Text>
             </Text>
           </View>
 
@@ -47,9 +47,7 @@ const Cart = () => {
           <View style={{ flexGrow: 1 }}></View>
           <TouchableOpacity
             onPress={() => {
-              console.log(singleItem.index)
-              removeItem(singleItem.index);
-             
+             removeData(item.index)
             }}
           >
             <MaterialIcons

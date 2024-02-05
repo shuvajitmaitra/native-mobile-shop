@@ -2,18 +2,14 @@ import React from "react";
 import {
   DrawerContentScrollView,
   DrawerItem,
-  DrawerItemList,
   createDrawerNavigator,
 } from "@react-navigation/drawer";
-import { SimpleLineIcons } from "@expo/vector-icons";
 const Drawer = createDrawerNavigator();
-
+import React from "react";
 import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
 import { NavigationContainer } from "@react-navigation/native";
-import { Button, TouchableOpacity } from "react-native";
 import BottomNavigator from "../BottomNavigation/BottomNavigator";
-import ScreenOne from "../Pages/ScreenOne";
 
 const CustomDrawerContent = (props) => {
 
