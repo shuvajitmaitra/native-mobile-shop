@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, } from "../Redux/CartSlice";
+import { addToCart, decrementQuantity, } from "../Redux/CartSlice";
 
 const ShopCard = ({ items }) => {
   const { model, price, brand, quantity, image } = items;
@@ -11,7 +11,7 @@ const ShopCard = ({ items }) => {
   const mobileDataAdd = (item) => {
     dispatch(addToCart(item));
     setLocalQuantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : prevQuantity));
-
+   dispatch( decrementQuantity(quantity))
   };
   return (
     <View
