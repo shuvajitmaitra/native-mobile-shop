@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { AntDesign } from '@expo/vector-icons';
 import NewSlider from "../Components/NewSlider";
