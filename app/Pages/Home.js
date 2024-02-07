@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { AntDesign } from '@expo/vector-icons';
-import NewSlider from "../Components/NewSlider";
+import Slider from "../Components/Slider";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
     <TextInput placeholder="Search mobile" className=''/>
     <AntDesign name="search1" size={24} color="#e71d36" className='font-3xl' />
    </View>
-   <NewSlider/>
+   <Slider/>
     </View>
   );
 };
