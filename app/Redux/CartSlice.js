@@ -1,31 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Data from "../Data/Data";
+
 const initialState = {
-  mobileData: [],
-  quantity: 0
+  mobilesData: [],
+  data: Data
 };
 const cartSlice = createSlice({
   name: "mobile",
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const itemInCart = state.mobile.find((item) => item.id == action.payload.id);
+      const itemInCart = state.mobilesData.find(
+        (item) => item.id == action.payload.id
+      );
       if (itemInCart) {
-        itemInCart.order++; 
+        itemInCart.order++;
       } else {
-        state.mobileData.push({ ...action.payload, order: 1 });
+        state.mobilesData.push({ ...action.payload, order: 1 });
+        console.log("MobilesData", state.mobilesData);
       }
     },
     removeToCart: (state, action) => {
-      return state.mobileData.filter((item) => item.id !== action.payload);
+      return state.mobilesData.filter((item) => item.id !== action.payload);
     },
     decrementQuantity: (state, action) => {
-      const itemInCart = state.find((item) => item.id == action.payload.id);
-      if(itemInCart.quantity){
-        itemInCart.quantity--
-      }
-      else(
-        console.warn("Limit reached")
-      )
+      if (action.payload > 0) {
+        action.payload - 1;
+      } else action.payload;
     },
   },
 });

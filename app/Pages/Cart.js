@@ -3,16 +3,18 @@ import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { removeToCart } from "../Redux/CartSlice";
 import { MaterialIcons } from '@expo/vector-icons';
+
 const Cart = () => {
+
 const items = useSelector(state => state.mobilesData)
-console.log(items)
+console.log("Items", items)
 const dispatch = useDispatch()
 const removeData = (index) => {
   dispatch(removeToCart(index))
 }
   return (
     <ScrollView>
-      {items?.map((item, index) => (
+      {items?.mobilesData?.map((item, index) => (
         <View
           key={index}
           style={{
