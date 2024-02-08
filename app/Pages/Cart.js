@@ -5,9 +5,8 @@ import { removeToCart } from "../Redux/CartSlice";
 import { MaterialIcons } from '@expo/vector-icons';
 
 const Cart = () => {
-
 const items = useSelector(state => state.mobilesData)
-console.log("Items", items)
+console.log(items)
 const dispatch = useDispatch()
 const removeData = (index) => {
   dispatch(removeToCart(index))
@@ -52,7 +51,7 @@ const removeData = (index) => {
           <View style={{ flexGrow: 1 }}></View>
           <TouchableOpacity
             onPress={() => {
-             removeData(item.id)
+              removeData(item.id)
             }}
           >
             <MaterialIcons
