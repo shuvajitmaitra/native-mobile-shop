@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import Slider from "../Components/Slider";
 
 const Home = () => {
+  
   return (
     <View>
    <View className='flex-row justify-between items-center p-2 border border-gray-400 mx-2 mt-3 rounded-xl '>

@@ -5,12 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, } from "../Redux/CartSlice";
 
 const ShopCard = ({ items }) => {
-  const { model, price, brand, quantity, image } = items;
+  const { model, price, quantity, image } = items;
   const dispatch = useDispatch();
-  const [localQuantity, setLocalQuantity] = useState(quantity)
   const mobileDataAdd = (item) => {
     dispatch(addToCart(item));
-    setLocalQuantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : prevQuantity));
+    // setLocalQuantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : prevQuantity));
 
   };
   return (
@@ -41,7 +40,7 @@ const ShopCard = ({ items }) => {
         Model: {model}
       </Text>
       <Text style={{ fontSize: 12, color: "gray", marginTop: 4 }}>
-        Quantity: {localQuantity}
+        Quantity: {quantity}
       </Text>
       {/* <View style={{ flexGrow: 1 }}></View> */}
       <View

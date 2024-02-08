@@ -1,6 +1,7 @@
 import { View, ScrollView } from 'react-native'
 import React from 'react'
 import ShopCard from "../Components/ShopCard"
+import { useSelector } from 'react-redux'
 const Shop = () => {
   const data = [
     {
@@ -87,12 +88,12 @@ const Shop = () => {
 
 
 
-
+const allData = useSelector(state=> state.mobilesData.data)
   return (
     <ScrollView>
       <View style={{ alignItems: "center", justifyContent: "center", flexWrap: "wrap", flexDirection: "row" }}>
         {
-          data.map((items, index) => <ShopCard key={index} items={items}></ShopCard>)
+          allData.map((items, index) => <ShopCard key={index} items={items}></ShopCard>)
         }
       </View>
     </ScrollView>

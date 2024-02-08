@@ -11,7 +11,8 @@ import { useSelector } from "react-redux";
 
 const Tab = createBottomTabNavigator();
 const BottomNavigator = ({ navigation }) => {
-  const addedProduct = useSelector((state) => state.mobilesData);
+  const addedProduct = useSelector((state) => state.mobilesData.mobilesData);
+  // console.log(JSON.stringify(addedProduct, null, 1))
 
   return (
     <Tab.Navigator
@@ -83,7 +84,7 @@ const BottomNavigator = ({ navigation }) => {
                   backgroundColor: addedProduct.length && (focused ? "#e71d36" : "black"),
                 }}
               >
-                {addedProduct.length && addedProduct.length}
+                {addedProduct?.length && addedProduct?.length}
               </Text>
               <AntDesign
                 name="shoppingcart"

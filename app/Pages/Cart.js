@@ -2,14 +2,14 @@ import React from "react";
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { removeToCart } from "../Redux/CartSlice";
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons } from "@expo/vector-icons";
 const Cart = () => {
-  const items = useSelector(state => state.mobilesData)
-  console.log(JSON.stringify(items, null, 2));
-  const dispatch = useDispatch()
-  const removeData = (index) => {
-    dispatch(removeToCart(index))
-  }
+  const items = useSelector((state) => state?.mobilesData?.mobilesData);
+  // console.log(JSON.stringify(items, null, 1))
+  const dispatch = useDispatch();
+  const removeData = (index, order) => {
+    dispatch(removeToCart({index, order}));
+  };
   return (
     <ScrollView>
       {items?.map((item, index) => (
@@ -41,8 +41,7 @@ const Cart = () => {
               Order: {item.order}
             </Text>
             <Text style={{ color: "gray", marginTop: 2 }}>
-              Price:{" "}
-              <Text style={{ color: "#e71d36" }}>$ {item.price}</Text>
+              Price: <Text style={{ color: "#e71d36" }}>$ {item.price}</Text>
             </Text>
           </View>
 
@@ -50,7 +49,7 @@ const Cart = () => {
           <View style={{ flexGrow: 1 }}></View>
           <TouchableOpacity
             onPress={() => {
-              removeData(item.id)
+              removeData(item.id, item.order);
             }}
           >
             <MaterialIcons
