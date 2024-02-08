@@ -1,7 +1,6 @@
 import { View, ScrollView } from 'react-native'
 import React from 'react'
 import ShopCard from "../Components/ShopCard"
-import { useSelector } from 'react-redux'
 const Shop = () => {
   const data = [
     {
@@ -85,6 +84,7 @@ const Shop = () => {
       quantity: 30
     }
   ]
+
 
 
 
