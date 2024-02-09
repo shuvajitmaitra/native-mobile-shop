@@ -4,6 +4,7 @@ import CartSlice from "./CartSlice";
 const myStore = configureStore({
     reducer: {
         mobilesData: CartSlice
+
     }
 })
 
